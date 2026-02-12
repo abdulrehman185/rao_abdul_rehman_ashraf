@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Portfolio of Rao Abdul Rehman Ashraf - Mathematics Student at Bahauddin Zakariya University" />
+<title>Rao Abdul Rehman Ashraf | Portfolio</title>
+<style>
+  /* Reset and Base Styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+    color: #222;
+    line-height: 1.6;
+    display: flex;
+    min-height: 100vh;
+  }
+  a {
+    color: #004aad;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Container */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 2rem auto;
+    box-shadow: 0 0 30px rgb(0 0 0 / 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    background: #111827;
+    color: #e0e0e0;
+    flex: 1 1 320px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .sidebar .profile-pic {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 160px;
+    height: 160px;
+    border: 6px solid #004aad;
+    box-shadow: 0 3px 15px rgba(0, 74, 173, 0.4);
+  }
+  .sidebar .profile-pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .sidebar h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+  }
+  .about-me {
+    font-size: 1.05rem;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 85%;
+  }
+  .contact-info {
+    width: 100%;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+  }
+  .contact-info p {
+    margin: 0.4rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .contact-info p svg {
+    fill: #00aaff;
+    min-width: 20px;
+    min-height: 20px;
+  }
+
+  /* Sidebar Sections */
+  .sidebar-section {
+    width: 100%;
+  }
+  .sidebar-section h3 {
+    border: 2px solid #004aad;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #004aad;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.3rem 0;
+    margin-bottom: 0.7rem;
+    font-size: 1.1rem;
+  }
+  .sidebar-section ul {
+    list-style: none;
+    padding-left: 1rem;
+  }
+  .sidebar-section ul li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    color: #cfd8dc;
+  }
+
+  /* Main Content */
+  .main-content {
+    flex: 2 1 640px;
+    padding: 3rem 3rem 3rem 4rem;
+    background: #fafafa;
+    color: #222;
+  }
+  .main-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #004aad;
+    font-weight: 700;
+    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 3rem;
+  }
+
+  section h2 {
+    background-color: #004aad;
+    color: white;
+    display: inline-block;
+    padding: 0.35rem 1.25rem;
+    border-radius: 25px;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    user-select: none;
+  }
+
+  /* Education */
+  .education-item {
+    margin-bottom: 1.4rem;
+  }
+  .education-item h3 {
+    margin: 0 0 0.3rem 0;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #004aad;
+  }
+  .education-item p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  /* Certificate */
+  .certificate-desc {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #222;
+    margin-left: 0.3rem;
+  }
+
+  /* Experience */
+  .experience-desc {
+    font-size: 1rem;
+    color: #222;
+    line-height: 1.4;
+  }
+  .experience-desc span {
+    font-weight: 600;
+  }
+
+  /* Skills Summary */
+  .skill {
+    margin-bottom: 1rem;
+  }
+  .skill-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+  }
+  .progress-bar {
+    width: 100%;
+    height: 14px;
+    border-radius: 12px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+  }
+  .progress-bar-inner {
+    height: 100%;
+    background-color: #004aad;
+    border-radius: 12px;
+    transition: width 1s ease-in-out;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .container {
+      flex-direction: column;
+      margin: 1rem;
+      box-shadow: none;
+    }
+    .sidebar, .main-content {
+      flex: none;
+      width: 100%;
+      padding: 2rem 2rem;
+    }
+    .main-content {
+      padding-top: 0;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-label="Sidebar with profile and personal info">
+    <div class="profile-pic" aria-label="Profile photo of Rao Abdul Rehman Ashraf">
+      <img src="https://i.imgur.com/fVZ0nv3.jpg" alt="Rao Abdul Rehman Ashraf">
+    </div>
+
+    <h2>RAO ABDUL REHMAN ASHRAF</h2>
+
+    <p class="about-me">
+      I am student of Bahauddin Zakariya University, Multan from Mathematics department.
+    </p>
+
+    <div class="contact-info" aria-label="Contact information">
+      <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.58.57 1 1 0 011 1v3.5a1 1 0 01-1 1A16 16 0 014 6a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.21 1.11l-2.24 2.1z"/></svg> 0314 1769585</p>
+      <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M20 4H4c-1.1 0-2 .9-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> abdulrehmanrao184@gmail.com</p>
+      <p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9a5 5 0 0110 0c0 3.01-2.7 7.42-5 10.56C9.71 16.41 7 12.02 7 9z"/></svg> Near Raza KG School, House Number 308_D, Mohalla Lal Bagh, Shujabad, District Multan.</p>
+    </div>
+
+    <!-- Language -->
+    <section class="sidebar-section" aria-label="Languages spoken">
+      <h3>Language</h3>
+      <ul>
+        <li>English</li>
+        <li>Urdu</li>
+      </ul>
+    </section>
+
+    <!-- Expertise -->
+    <section class="sidebar-section" aria-label="Professional expertise and skills">
+      <h3>Expertise</h3>
+      <ul>
+        <li>Problem Solving</li>
+        <li>Leadership</li>
+        <li>Communication Skills</li>
+        <li>Programming</li>
+      </ul>
+    </section>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content" aria-label="Main content area">
+    <header>
+      <h1>RAO ABDUL REHMAN ASHRAF</h1>
+    </header>
+
+    <!-- Education Section -->
+    <section aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+
+      <article class="education-item">
+        <h3>Citi Institute of Computer Sciences, Shujabad</h3>
+        <p>Matric in science subjects</p>
+        <p><em>2019 - 2021</em></p>
+      </article>
+
+      <article class="education-item">
+        <h3>Punjab Group of Colleges, Shujabad</h3>
+        <p>FSC (ICS)</p>
+        <p><em>2021 - 2023</em></p>
+      </article>
+
+      <article class="education-item">
+        <h3>Bahauddin Zakariya University, Multan</h3>
+        <p>Continue studying Bs Mathematics in 5<sup>th</sup> semester evening</p>
+        <p><em>2023 - 2027</em></p>
+      </article>
+    </section>
+
+    <!-- Certificate Section -->
+    <section aria-labelledby="certificate-title">
+      <h2 id="certificate-title">Certificate</h2>
+      <p class="certificate-desc">Excel basics for data analysis</p>
+    </section>
+
+    <!-- Experience Section -->
+    <section aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+      <p class="experience-desc">
+        <span>Ms Office work</span>: Word, Excel, PowerPoint, Python
+      </p>
+    </section>
+
+    <!-- Skills Summary Section -->
+    <section aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills Summary</h2>
+
+      <div class="skill" aria-label="Ms Office skill proficiency">
+        <div class="skill-label">
+          <span>Ms Office</span>
+          <span>56%</span>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar-inner" style="width: 56%;"></div>
+        </div>
+      </div>
+
+      <div class="skill" aria-label="Excel worksheet skill proficiency">
+        <div class="skill-label">
+          <span>Excel Worksheet</span>
+          <span>62%</span>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar-inner" style="width: 62%;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
